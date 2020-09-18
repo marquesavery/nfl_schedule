@@ -7,9 +7,7 @@ class NflSchedule::CLI
 
   def schedule
     puts "This week's Schedule."
-    puts "Sunday, September 20"
-    puts "  1. New York at Chicago at 12:00pm"
-    puts "  2. Atlanta at Dallas at 12:00pm"
+    @schedule = NflSchedule::Schedule.current_week
   end
 
   def menu

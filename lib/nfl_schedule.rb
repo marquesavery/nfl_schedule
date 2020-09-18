@@ -1,6 +1,2 @@
-require "nfl_schedule/version"
-
-module NflSchedule
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "nfl_schedule/version"
+require_relative './nfl_schedule/cli'

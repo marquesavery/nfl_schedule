@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/nfl_schedule'
+require "bundler/setup"
+require "nfl_schedule"
 
 NflSchedule::CLI.new.call

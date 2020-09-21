@@ -1,10 +1,8 @@
 class NflSchedule::Schedule
-  attr_accessor :team1, :team2, :time, :location, :url 
+  attr_accessor :team1, :team2, :time, :location, :url
 
   def self.current_week
-    puts "Sunday, September 20"
-    puts "  1. New York at Chicago at 12:00pm, Soldier Field, Chicago"
-    puts "  2. Atlanta at Dallas at 12:00pm, AT&T Stadium, Arlington"
+    NflSchedule::ScheduleScraper.new("https://www.espn.com/nfl/schedule")
 
 
     game_1 = self.new

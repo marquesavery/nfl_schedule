@@ -24,7 +24,7 @@ class NflSchedule::CLI
 
       if input.to_i > 0 && input.to_i <= 16
         the_game = @schedule[input.to_i-1]
-        puts "#{the_game.team1} at #{the_game.team2} at #{the_game.time}, #{the_game.location}."
+        puts "#{the_game.team1} at #{the_game.team2}, #{the_game.location}."
         odds = NflSchedule::Schedule.scrape_game(the_game.url)
         puts "Spread"
         puts "#{odds[0]}      #{odds[1]}"

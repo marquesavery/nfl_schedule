@@ -61,15 +61,13 @@ class NflSchedule::Schedule
     doc = Nokogiri::HTML(open(url.prepend("https://www.espn.com")))
     odds = []
 
-    odds << doc.css(".score")[5].text #+3
-    odds << doc.css(".score")[10].text #-3
-    odds << doc.css(".score")[6].text.gsub("\n",'').gsub("\t",'') #+155
-    odds << doc.css(".score")[11].text.gsub("\n",'').gsub("\t",'') #-175
+    odds << doc.css(".score")[5].text #Team1 Spread
+    odds << doc.css(".score")[10].text #Team2 Spread
+    odds << doc.css(".score")[6].text.gsub("\n",'').gsub("\t",'') #Team1 Money line
+    odds << doc.css(".score")[11].text.gsub("\n",'').gsub("\t",'') #Team2 Money line
     odds << doc.css(".score")[7].text #over/under
 
     odds
   end
-
-
 
 end

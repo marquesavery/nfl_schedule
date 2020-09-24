@@ -1,8 +1,6 @@
 # NflSchedule
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nfl_schedule`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+NFL Schedule is a parser that returns the current weeks NFL schedule, the scores of the games played, and betting odds.
 
 ## Installation
 
@@ -32,4 +30,21 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nfl_schedule.
+Bug reports and pull requests are welcome on GitHub at https://github.com/marquesavery/nfl_schedule.
+
+-Identify an issue you want to work on that is not currently assigned to anyone
+-Assign it to yourself (so two people are not working on the same issue)
+-Checkout a new issue branch
+-Do the work
+-Create tests
+-Commit locally
+-Run the tests
+-Final commit
+-Push
+-Create a pull request
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+See this license at LICENSE.md.

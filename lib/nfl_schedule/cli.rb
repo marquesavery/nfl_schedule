@@ -7,7 +7,7 @@ class NflSchedule::CLI
   def schedule(url = "https://www.espn.com/nfl/schedule") #list the NFL Schedule
 
     puts "This week's Schedule."
-    @schedule = NflSchedule::Schedule.scrape_espn(url) #calls the scrape method from the schedule class
+    @schedule = NflSchedule::Games.game(url) #calls the scrape method from the schedule class
     @schedule.each.with_index(1) do |game, i| #iterates through the games array and lists the games
       if game.day != nil
         puts "#{game.day}"
@@ -25,7 +25,7 @@ class NflSchedule::CLI
       if input.to_i > 0 && input.to_i <= 16 #Max of 16 games a week (32 teams)
         the_game = @schedule[input.to_i-1] #calls and assigns the game to a variable
         puts "#{the_game.team1} at #{the_game.team2}, #{the_game.location}."
-        odds = NflSchedule::Schedule.scrape_game(the_game.url) #scrapes the specific game called and lists the odds
+        odds = NflSchedule::Scraper.scrape_game(the_game.url) #scrapes the specific game called and lists the odds
         puts "Spread"
         puts "#{odds[0]}      #{odds[1]}"
         puts "Money Line"

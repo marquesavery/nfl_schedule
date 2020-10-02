@@ -4,3 +4,5 @@ require "bundler/setup"
 require "nfl_schedule"
 
 NflSchedule::CLI.new.call
+
+# NflSchedule::Schedule.scrape_schedule

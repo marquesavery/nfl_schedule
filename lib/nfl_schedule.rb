@@ -4,4 +4,5 @@ require 'open-uri'
 
 require_relative "nfl_schedule/version"
 require_relative './nfl_schedule/cli'
-require_relative './nfl_schedule/schedule'
+require_relative './nfl_schedule/games'
+require_relative './nfl_schedule/scraper'

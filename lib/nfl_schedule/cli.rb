@@ -7,7 +7,7 @@ class NflSchedule::CLI
   def schedule(url = "https://www.espn.com/nfl/schedule") #list the NFL Schedule
 
     puts "This week's Schedule."
-    @schedule = NflSchedule::Games.game(url) #calls the scrape method from the schedule class
+    @schedule = NflSchedule::Game.games(url) #calls the scrape method from the schedule class
     @schedule.each.with_index(1) do |game, i| #iterates through the games array and lists the games
       if game.day != nil
         puts "#{game.day}"

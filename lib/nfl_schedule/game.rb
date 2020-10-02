@@ -1,4 +1,4 @@
-class NflSchedule::Games
+class NflSchedule::Game
   attr_accessor :team1, :team2, :time, :location, :url, :day, :result
 
   @@all = []  #class variable to store instances of a game
@@ -7,7 +7,7 @@ class NflSchedule::Games
     @@all
   end
 
-  def self.game(url) # Scrapes espn (url) from the NFLSchedule::CLI.schedule method
+  def self.games(url) # Scrapes espn (url) from the NFLSchedule::CLI.schedule method
     scrape_results = NflSchedule::Scraper.scrape_espn(url)
     teams = scrape_results[0]
     days = scrape_results[1]
@@ -18,21 +18,21 @@ class NflSchedule::Games
     @@all = []
 
     teams.each_slice(2) do |team| #creates instance of game and assigns variables
-      game = self.new
-      game.team1 = team[0]
-      game.team2 = team[1]
-      game.result = results[counter]
-      game.location = locations[counter]
-      game.url = urls[counter]
+      new_game = self.new
+      new_game.team1 = team[0]
+      new_game.team2 = team[1]
+      new_game.result = results[counter]
+      new_game.location = locations[counter]
+      new_game.url = urls[counter]
       if counter == 0
-        game.day = days[0]
+        new_game.day = days[0]
       elsif counter == 1
-        game.day = days[1]
+        new_game.day = days[1]
       elsif counter == 15
-        game.day = days[2]
+        new_game.day = days[2]
       end
       counter += 1
-      @@all << game
+      @@all << new_game
     end
     @@all
   end
